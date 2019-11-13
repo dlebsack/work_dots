@@ -151,11 +151,12 @@ mode "resize" {
 
 bindsym $mod+d mode "resize"
 
-set $bg-color 	         #2f343f
+set $bg-color 	         #2f343f 
 set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
+set $bd                  #C0C5CE
 
 # window colors
 #                       border              background         text                 indicator
@@ -165,13 +166,13 @@ set $urgent-bg-color     #E53935
 #client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
 
 
-# class                     border  backgr. text indicator child_border
-client.focused              $bg     $bg     $fg  $bg       $bg
-client.focused_inactive     $bg     $bg     $fg  $bg       $bg
-client.unfocused            $bg     $bg     $fg  $bg       $bg
-client.urgent               $bg     $bg     $fg  $bg       $bg
-client.placeholder          $bg     $bg     $fg  $bg       $bg
-client.background           $bg
+# # class                 border  backgr. text    indicator child_border
+
+client.focused            #65737E #65737E #65737E #65737E   #65737E 
+client.focused_inactive   #2f343f #2f343f #2f343f #2f343f   #2f343f
+client.unfocused          #2f343f #2f343f #2f343f #2f343f   #2f343f
+client.urgent             #BF616A #BF616A #BF616A #BF616A   #BF616A
+client.background         #2f343f
 
 
 # Media Keys
@@ -202,9 +203,9 @@ bindsym XF86AudioPrev exec playerctl -p spotify previous
 font pango:lemon 0
 for_window [class=".*"] title_format "<span font='Artwiz Lime 0'> > %title</span>"
 
-for_window [class="^.*"] border pixel 0
-for_window [floating] border pixel 10
-for_window [tiling] border pixel 0
+for_window [class="^.*"] border pixel 5
+for_window [floating] border pixel 5
+for_window [tiling] border pixel 5
 
 
 # Gaps
@@ -212,8 +213,6 @@ for_window [tiling] border pixel 0
 smart_gaps on
 gaps inner 30
 gaps outer -20
-workspace $workspace4 gaps inner 0
-workspace $workspace4 gaps outer 0
 
 Focus_follows_mouse on
 
