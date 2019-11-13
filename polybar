@@ -33,12 +33,13 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+; font-0 = fixed:pixelsize=10;1
+font-0 = Source Code Pro for Powerline:pixelsize=10;1
+# font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+# font-2 = siji:pixelsize=10;1
 
 modules-left = i3
-modules-right = gcal pulseaudio memory cpu eth temperature date
+modules-right = gcal pulseaudio memory cpu temperature eth date
 
 tray-position = right
 tray-padding = 2
@@ -113,9 +114,6 @@ label-urgent-padding = 2
 type = custom/script
 interval = 60
 exec = cd ~/Scripts && python agenda_reader.py
-click-left = gcalcli --nocolor agenda
-tail = true
-label-foreground = #ffffff
 
 [module/cpu]
 type = internal/cpu
