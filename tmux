@@ -277,7 +277,7 @@ google_calendar_status="#[fg=blue,bright]#{python /home/david/Scripts/agenda_rea
 
 set -g status-right-length 200
 set -g status-left "$wg_session"
-set -g status-right "#{prefix_highlight} $wg_is_keys_off $wg_is_zoomed | $google_calendar_status | #{sysstat_cpu} | #{sysstat_mem} | #{sysstat_loadavg} | $wg_user_host | $wg_date $wg_battery #{online_status}"
+set -g status-right "#{prefix_highlight} $wg_is_keys_off $wg_is_zoomed #{online_status}"
 
 # online and offline icon for tmux-online-status
 set -g @online_icon "#[fg=$color_level_ok]●#[default]"
