@@ -220,46 +220,24 @@ new_window pixel 0
 smart_borders on
 
 #set workspace names
-set $workspace1 ""
-set $workspace2 "☕"
-# set $workspace2 "⛧"
-set $workspace3 "☥"
-set $workspace4 "☯"
-set $workspace5 "🎶"
-set $workspace6 "⚛"
-set $workspace7 "🐱"
-set $workspace8 "🌙"
-
-#1 Terminals 
-#2 Mail 
-#3 Palemoon 
-#4 Thesis 
-#5 PDF 
-#6 Youtube 
+set $workspace1 "1"
+set $workspace2 "2"
+set $workspace3 "3"
+set $workspace4 "4"
+set $workspace5 "5"
+set $workspace6 "6"
+set $workspace7 "7"
+set $workspace8 "8"
 
 hide_edge_borders both
-
-# bar
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-#bar {
-#  	status_command i3blocks -c /home/david/.i3/i3bar
-#    status_command i3status
-#	colors {
-#		background $bg
-#	    	separator #757575
-#		#                  border             background         text
-#		focused_workspace  $bg                $bg                $text-color
-#		active_workspace   $bg                $bg                $text-color
-#		inactive_workspace $bg                $bg                $inactive-text-color
-#		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-#	}
-#}
 
 # apps to start at boot
 exec --no-startup-id dunst
 exec --no-startup-id compton -b
+# exec --no-startup-id bash ~/.dotfiles/screenlayout/default.sh
 exec --no-startup-id feh --bg-tile ~/.dotfiles/2B303B.png
+exec --no-startup-id polybar -r main
+exec --no-startup-id unclutter -idle 10 -root
 
 for_window [window_role="About"] floating enable
 for_window [class="vlc"] floating enable
@@ -269,3 +247,4 @@ for_window [title="Enpass"] floating enable
 for_window [title="enpass"] floating enable
 for_window [class="zoom"] floating enable
 for_window [title="Bluetooth"] floating enable
+for_window [class="Gucharmap"] floating enable
