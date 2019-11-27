@@ -51,7 +51,7 @@ font-1 = Font Awesome 5 Free:pixelsize=10;1
 font-2 = EmojiOne Color:pixelsize-10;1
 
 modules-left = i3
-modules-right = gcal pulseaudio memory cpu temperature eth date
+modules-right = outage_time pulseaudio memory cpu temperature eth gcal date
 
 tray-position = right
 tray-padding = 2
@@ -110,10 +110,17 @@ label-urgent-padding = 2
 ; label-song-maxlen = 25
 ; label-song-ellipsis = true
 ;
+[module/outage_time]
+type = custom/script
+interval = 43200
+exec = python ~/Scripts/days_since_outdate.py
+format-underline = ${colors.bright_black}
+
 [module/gcal]
 type = custom/script
 interval = 60
 exec = cd ~/Scripts && python agenda_reader.py
+format-underline = ${colors.bright_black}
 
 [module/cpu]
 type = internal/cpu
