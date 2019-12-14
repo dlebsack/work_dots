@@ -62,4 +62,4 @@ def get_raw_agenda(file_path):
 raw_agenda = get_raw_agenda('/home/david/.gcal_agenda.txt')
 event_list = [Events(event) for event in raw_agenda]
 agenda = Agenda(event_list)
-print(agenda.next_event.pprint)
+print(agenda.next_event.pprint) if agenda.next_event else print("")
