@@ -256,7 +256,7 @@ setw -g window-status-activity-style "fg=$color_main"
 
 # outline for active pane
 
-setw -g pane-border-style "fg=$colour19"
+# setw -g pane-border-style "fg=$colour19"
 setw -g pane-active-border-style "fg=$color_main"
 
 # general status bar settings
