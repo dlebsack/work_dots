@@ -26,7 +26,7 @@ class Events():
             date_str = self.event_time.strftime('%I:%M%p')
         else:
             date_str = self.event_time.strftime('%a %b %d  %I:%M%p')
-        return '{}  {}'.format(date_str, self.event_name)
+        return '{}  {}'.format(date_str, self.event_name.lstrip(" "))
 
 
 class Agenda():
@@ -54,7 +54,7 @@ def get_raw_agenda(file_path):
             agenda.append(event)
             grab_date = False
             continue
-        agenda.append(event.replace('          ', date))
+        agenda.append(event.replace('           ', date))
     year = datetime.now().strftime('%Y')
     return ['{} {}'.format(year, event) for event in agenda]
 
