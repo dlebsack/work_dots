@@ -11,8 +11,8 @@ class Events():
 
     @property
     def event_time(self):
-        str_date = self.event[:24]
-        date = datetime.strptime(str_date, '%Y %a %b %d   %I:%M%p')
+        str_date = self.event[:23]
+        date = datetime.strptime(str_date, '%Y %a %b %d  %I:%M%p')
         return date
 
     @property
