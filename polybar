@@ -51,7 +51,7 @@ font-1 = Font Awesome 5 Free:pixelsize=10;1
 font-2 = EmojiOne Color:pixelsize-10;1
 
 modules-left = i3
-modules-right = outage_time pulseaudio memory cpu temperature eth gcal date
+modules-right = pulseaudio memory cpu temperature eth gcal date
 
 tray-position = right
 tray-padding = 2
@@ -119,7 +119,7 @@ format-underline = ${colors.bright_black}
 [module/gcal]
 type = custom/script
 interval = 60
-exec = cd ~/Scripts && python agenda_reader.py
+exec = cd ~/.dotfiles && python agenda_reader.py
 format-underline = ${colors.bright_black}
 
 [module/cpu]
