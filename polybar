@@ -51,7 +51,7 @@ font-1 = Font Awesome 5 Free:pixelsize=10;1
 font-2 = EmojiOne Color:pixelsize-10;1
 
 modules-left = i3
-modules-right = pulseaudio memory cpu temperature eth gcal date
+modules-right = pulseaudio memory cpu temperature eth gcal weather date
 
 tray-position = right
 tray-padding = 2
@@ -121,6 +121,13 @@ type = custom/script
 interval = 60
 exec = cd ~/.dotfiles && python agenda_reader.py
 format-underline = ${colors.bright_black}
+
+[module/weather]
+; curl "wttr.in/Sacramento?format="%c+%t+%w+%o"" > /home/david/.weather 
+type = custom/script
+interval = 30
+exec = cat ~/.weather
+format-underline = ${colors.green}
 
 [module/cpu]
 type = internal/cpu
