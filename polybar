@@ -51,7 +51,7 @@ font-1 = Font Awesome 5 Free:pixelsize=10;1
 font-2 = EmojiOne Color:pixelsize-10;1
 
 modules-left = i3
-modules-right = pulseaudio memory cpu temperature eth gcal weather date
+modules-right = outage_time pulseaudio memory cpu temperature eth gcal weather date
 
 tray-position = right
 tray-padding = 2
