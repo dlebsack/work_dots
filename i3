@@ -250,3 +250,8 @@ for_window [title="enpass"] floating enable
 for_window [class="zoom"] floating enable
 for_window [title="Bluetooth"] floating enable
 for_window [class="Gucharmap"] floating enable
+
+# application hotkeys
+bindsym $mod+c exec --no-startup-id google-chrome-stable
+bindsym $mod+p exec --no-startup-id enpass
+bindsym $mod+m exec --no-startup-id studio-3t
