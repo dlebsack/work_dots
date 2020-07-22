@@ -86,8 +86,9 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 #bind workspaces to specific screens
-workspace $workspace1 output HDMI-2
-workspace $workspace2 output DP-1
+workspace $workspace1 output DP-2
+workspace $workspace2 output HDMI-0
+workspace $workspace3 output DP-0.8
 
 # switch to workspace
 #bindsym $mod+1 workspace 1
@@ -250,6 +251,10 @@ for_window [title="enpass"] floating enable
 for_window [class="zoom"] floating enable
 for_window [title="Bluetooth"] floating enable
 for_window [class="Gucharmap"] floating enable
+for_window [class="Steam"] floating enable
+for_window [class="Lxappearance"] floating enable
+for_window [class="Arandr"] floating enable
+
 
 # application hotkeys
 bindsym $mod+c exec --no-startup-id google-chrome-stable

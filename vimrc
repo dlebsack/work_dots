@@ -57,6 +57,8 @@ Plug 'git-time-metric/gtm-vim-plugin'      " git time metrics
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'Rykka/riv.vim'                       " vim rst plugin
 Plug 'Rykka/InstantRst'                    " live viewer for rst files
+Plug 'sirtaj/vim-openscad'                 " openscad syntax highlighting
+Plug 'stevearc/vim-arduino'                " arduino
 " Plug 'morhetz/gruvbox'                    " colors
 call plug#end()
 
@@ -86,7 +88,7 @@ let g:syntastic_python_pylint_post_args="--max-line-length=120"
 let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
 
 " vim-go config
-let g:go_autodetect_gopath = 0
+let g:go_autodetect_gopath = 1
 
 " go to definition
 au FileType go nmap <F12> <Plug>(go-def)
@@ -171,4 +173,5 @@ autocmd FileType python nnoremap <LocalLeader>= :0,$!yapf<CR>
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
-"
+
+:tnoremap <Esc> <C-\><C-n>

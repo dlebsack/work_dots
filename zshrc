@@ -16,6 +16,7 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 
 ZSH_THEME="spaceship"
 SPACESHIP_BATTERY_SHOW=false
+SPACESHIP_KUBECTL_SHOW=true
 SPACESHIP_KUBECONTEXT_COLOR_GROUPS=(
     red production
     yellow staging
@@ -24,14 +25,17 @@ COMPLETION_WAITING_DOTS="true"
 source $ZSH/oh-my-zsh.sh
 plugins=(
   git
+  docker
+  kubectl
 )
 
-export GOPATH=$HOME/go
+export GOPATH=$HOME
 export GODIR=$HOME/go
 export LANG=en_US.UTF-8
 export LC_MESSAGES="C"
 export EDITOR='vim'
-export PATH=$PATH:/root/
+export PATH="$HOME/.node/bin:$PATH"  
+export NODE_PATH="$HOME/.node/lib/node_modules:$NODE_PATH"  
 #ssh
 export VAULT_ADDR='http://127.0.0.1:8200'
 export SSH_KEY_PATH="~/.ssh/rsa_id"
@@ -131,6 +135,9 @@ alias telecom='cd ~/Projects/dialsource/telecom/'
 alias sync-remote='/home/david/.sync_remote.sh'
 alias dsc_call='/home/david/Scripts/add_dsc_call.sh'
 alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an> %Creset' --abbrev-commit"
+alias development="gcloud beta container clusters get-credentials development --region us-east4 --project dialsource-213300"
+alias staging="gcloud beta container clusters get-credentials staging --region us-east4 --project dialsource-213300"
+alias production='read "brave?Are you sure you want to connect to production? [Y/n]"; if [[ "$brave" =~ ^[Yy]$ ]]; then gcloud beta container clusters get-credentials production --region us-east4 --project dialsource-213300; fi'
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /root/vault vault

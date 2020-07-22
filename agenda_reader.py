@@ -11,7 +11,7 @@ class Events():
 
     @property
     def event_time(self):
-        str_date = self.event[:23]
+        str_date = self.event[:24].rstrip(' ')
         date = datetime.strptime(str_date, '%Y %a %b %d  %I:%M%p')
         return date
 
@@ -54,7 +54,7 @@ def get_raw_agenda(file_path):
             agenda.append(event)
             grab_date = False
             continue
-        agenda.append(event.replace('           ', date))
+        agenda.append('{}  {}'.format(date, event.lstrip('           ')))
     year = datetime.now().strftime('%Y')
     return ['{} {}'.format(year, event) for event in agenda]
 

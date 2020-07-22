@@ -123,10 +123,9 @@ exec = cd ~/.dotfiles && python agenda_reader.py
 format-underline = ${colors.bright_black}
 
 [module/weather]
-; curl "wttr.in/Sacramento?format="%c+%t+%w+%o"" > /home/david/.weather 
 type = custom/script
 interval = 30
-exec = cat ~/.weather
+exec = /usr/bin/curl --silent "wttr.in/?format=%c+%t+%w+%o" > ~/.weather && cat ~/.weather
 format-underline = ${colors.green}
 
 [module/cpu]
@@ -201,7 +200,7 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 0
+thermal-zone = 2
 warn-temperature = 60
 
 format = <ramp> <label>
