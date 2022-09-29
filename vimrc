@@ -1,6 +1,5 @@
 if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -59,12 +58,29 @@ Plug 'Rykka/riv.vim'                       " vim rst plugin
 Plug 'Rykka/InstantRst'                    " live viewer for rst files
 Plug 'sirtaj/vim-openscad'                 " openscad syntax highlighting
 Plug 'stevearc/vim-arduino'                " arduino
-" Plug 'morhetz/gruvbox'                    " colors
+Plug 'leafgarland/typescript-vim'          " typescript higlighting
+Plug 'neowit/vim-force.com'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'tpope/vim-dadbod'                     " database plugin
+Plug 'kristijanhusak/vim-dadbod-ui'         " database ui
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+" Plug 'morhetz/gruvbox'                   " colors
 call plug#end()
 
 " set colors
-let base16colorspace=256
-colorscheme base16-ocean
+let g:catppuccin_flavour = "mocha" " latte, frappe, macchiato, mocha
+
+lua << EOF
+require("catppuccin").setup()
+EOF
+
+colorscheme catppuccin
+
+" let base16colorspace=256
+" colorscheme base16-ocean
 
 let g:nord_uniform_status_lines = 1
 
@@ -107,7 +123,8 @@ let g:go_auto_sameids = 1
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='base16_oceanicnext'
+" let g:airline_theme='base16_oceanicnext'
+let g:airline_theme='deus'
 
 " autocmd FileType python map <buffer> <F3> :call Flake8()<CRG
 nmap <F7> :SyntasticCheck()<CR>
@@ -174,4 +191,9 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 
+:imap jk <Esc>
+
 :tnoremap <Esc> <C-\><C-n>
+
+" set filetypes as typescriptreact
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact

@@ -36,13 +36,13 @@ floating_modifier $mod
 
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec alacritty 
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+r exec rofi -show run -lines 3 -eh 2 -width 20 -padding 80 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
+bindsym $mod+r exec rofi -show run -lines 3 -eh 2 -width 20 -padding 80 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Source Code Pro 12"
 
 #lock the screen using i3lock
 bindsym $mod+Shift+x exec /bin/bash ~/.dotfiles/blur_script.sh
@@ -87,8 +87,8 @@ bindsym $mod+a focus parent
 
 #bind workspaces to specific screens
 workspace $workspace1 output DP-2
-workspace $workspace2 output HDMI-0
-workspace $workspace3 output DP-0.8
+workspace $workspace2 output DP-4
+workspace $workspace3 output DP-1
 
 # switch to workspace
 #bindsym $mod+1 workspace 1
@@ -236,10 +236,11 @@ hide_edge_borders both
 
 # apps to start at boot
 exec --no-startup-id dunst
-exec --no-startup-id compton -b
+exec --no-startup-id picom -b
 # exec --no-startup-id bash ~/.dotfiles/screenlayout/default.sh
-exec --no-startup-id feh --bg-tile ~/.dotfiles/2B303B.png
+exec --no-startup-id feh --bg-tile ~/.dotfiles/1e1e2e.png
 exec --no-startup-id polybar -r main
+exec --no-startup-id bash ~/.screenlayout/3for3.sh
 exec --no-startup-id unclutter -idle 10 -root
 
 for_window [window_role="About"] floating enable
@@ -249,14 +250,17 @@ for_window [title="Yate Client"] floating enable
 for_window [title="Enpass"] floating enable
 for_window [title="enpass"] floating enable
 for_window [class="zoom"] floating enable
+for_window [class="join"] floating enable
 for_window [title="Bluetooth"] floating enable
 for_window [class="Gucharmap"] floating enable
 for_window [class="Steam"] floating enable
 for_window [class="Lxappearance"] floating enable
 for_window [class="Arandr"] floating enable
 
-
 # application hotkeys
 bindsym $mod+c exec --no-startup-id google-chrome-stable
 bindsym $mod+p exec --no-startup-id enpass
 bindsym $mod+m exec --no-startup-id studio-3t
+
+# dunst notification shortcuts 
+bindsym ctrl+space exec dunstctl close-all

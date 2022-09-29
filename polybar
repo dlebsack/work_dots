@@ -1,6 +1,6 @@
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #2b303b
+background = #1e1e2e
 background-alt = #282828
 ;foreground = ${xrdb:color7:#222}
 foreground = #D8D8D8
@@ -8,10 +8,6 @@ foreground-alt = #555
 primary = #ffb52a
 alert = #bf616a
 black = #2b303b
-red = #bf616a
-green = #a3be8c
-yellow = #ebcb8b
-blue = #8fa1b3
 magenta = #b48ead
 cyan = #96b5b4
 white = #c0c5ce
@@ -20,6 +16,41 @@ bright_red = #bf616a
 bright_green = #a3be8c
 color19 = #4f5b66
 tmux_border = #343d46
+
+base = #1e1e2e
+mantle = #181825
+crust = #11111b
+
+text = #cdd6f4
+subtext0 = #a6adc8
+subtext1 = #bac2de
+
+surface0 = #313244
+surface1 = #45475a
+surface2 = #585b70
+
+overlay0 = #6c7086
+overlay1 = #7f849c
+overlay2 = #9399b2
+
+
+blue = #89b4fa
+lavender = #b4befe
+sapphire = #74c7ec
+sky = #89dceb
+teal = #94e2d5
+green = #a6e3a1
+yellow = #f9e2af
+peach = #fab387
+maroon = #eba0ac
+red = #f38ba8
+mauve = #cba6f7
+pink = #f5c2e7
+flamingo = #f2cdcd
+rosewater = #f5e0dc
+
+transparent = #FF00000
+
 
 [bar/main]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -31,7 +62,7 @@ radius = 6.0
 fixed-center = false
 
 background = ${colors.background}
-foreground = ${colors.foreground}
+foreground = ${colors.text}
 
 line-size = 3
 line-color = ${colors.background}
