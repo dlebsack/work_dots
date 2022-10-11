@@ -37,7 +37,7 @@ Plug 'vim-airline/vim-airline'             " Improved Statusline
 Plug 'dkprice/vim-easygrep'                " Easy Grep Searching /vv
 Plug 'tpope/vim-unimpaired'                " Fast naviating quicklists and buffers
 Plug 'ajh17/VimCompletesMe'                " Tab Autocomplete
-Plug 'mhinz/vim-signify'                   " Display GIT status of line in gutter. Requires save
+Plug 'airblade/vim-gitgutter'              " Display git status in gutter
 Plug 'majutsushi/tagbar'                   " Requires CTags  - Activate with F8
 Plug 'tpope/vim-fugitive'                  " GIT Branch on Statusline
 Plug 'tommcdo/vim-fubitive'                " Gbrowse support for bitbucket in fugitive
@@ -52,7 +52,7 @@ Plug 'chriskempson/base16-vim'             " vim colorscheme
 Plug 'junegunn/goyo.vim'                   " distraction free writing
 Plug 'scrooloose/nerdtree'                 " File explorer
 Plug 'nathanaelkane/vim-indent-guides'     " Visual Indention guides
-Plug 'git-time-metric/gtm-vim-plugin'      " git time metrics
+" Plug 'git-time-metric/gtm-vim-plugin'      " git time metrics
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'Rykka/riv.vim'                       " vim rst plugin
 Plug 'Rykka/InstantRst'                    " live viewer for rst files
@@ -67,7 +67,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-dadbod'                     " database plugin
 Plug 'kristijanhusak/vim-dadbod-ui'         " database ui
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
-" Plug 'morhetz/gruvbox'                   " colors
 call plug#end()
 
 " set colors
@@ -197,3 +196,11 @@ let g:indent_guides_guide_size = 1
 
 " set filetypes as typescriptreact
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
+
+" git gutter color config
+highlight GitGutterAdd    guifg=#008000 ctermfg=2
+highlight GitGutterChange guifg=#808000 ctermfg=3
+highlight GitGutterDelete guifg=#800000 ctermfg=1
+
+" git gutter update guter on save
+autocmd BufWritePost * GitGutter
