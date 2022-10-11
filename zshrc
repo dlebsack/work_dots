@@ -38,7 +38,7 @@ export GODIR=$HOME/go
 export GOPRIVATE="bitbucket.org/dialsource,go.buf.build"
 export LANG=en_US.UTF-8
 export LC_MESSAGES="C"
-export EDITOR='vim'
+export EDITOR='nvim'
 export PATH="$HOME/.node/bin:/home/david/.local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
@@ -80,8 +80,6 @@ alias production='read "brave?Are you sure you want to connect to production? [y
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /root/vault vault
-alias vim='echo "Please use nano"'
-alias nano='echo "Please use vim"'
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/david/Source/google-cloud-sdk/path.zsh.inc' ]; then . '/home/david/Source/google-cloud-sdk/path.zsh.inc'; fi
