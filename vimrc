@@ -204,3 +204,6 @@ highlight GitGutterDelete guifg=#800000 ctermfg=1
 
 " git gutter update guter on save
 autocmd BufWritePost * GitGutter
+
+" hybrid line numbers
+set nu rnu
