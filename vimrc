@@ -6,7 +6,7 @@ endif
 " enable syntax highlighting and context-aware indenting
 syntax on
 
-" syntax-aware auto indent for python
+" syntax-aware auto indent
 filetype plugin indent on
 set smartindent
 set tabstop=4
@@ -57,6 +57,8 @@ Plug 'kristijanhusak/vim-dadbod-ui'             " database ui
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}    " colorscheme
 Plug 'dense-analysis/ale'                       " async lint engine for proto linter
 Plug 'bufbuild/vim-buf'                         " buf proto linter
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' } " telescope
 " Plug 'tommcdo/vim-fubitive'                     " Gbrowse support for bitbucket in fugitive [BROKEN]
 " Plug 'kien/ctrlp.vim'                         " fuzzy file finder
 " Plug 'lepture/vim-jinja'                      " jinja syntax
@@ -64,7 +66,7 @@ Plug 'bufbuild/vim-buf'                         " buf proto linter
 " Plug 'tpope/vim-unimpaired'                   " Fast naviating quicklists and buffers
 " Plug 'ajh17/VimCompletesMe'                   " Tab Autocomplete
 " Plug 'chriskempson/base16-vim'                " vim colorscheme
-" Plug 'junegunn/goyo.vim'                      " distraction free writing
+Plug 'junegunn/goyo.vim'                      " distraction free writing
 " Plug 'git-time-metric/gtm-vim-plugin'         " git time metrics
 " Plug 'godlygeek/tabular'                      " align things in tables
 " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
@@ -73,9 +75,7 @@ call plug#end()
 " set colors
 let g:catppuccin_flavour = "mocha" " latte, frappe, macchiato, mocha
 
-lua << EOF
-require("catppuccin").setup()
-EOF
+lua require("catppuccin").setup()
 
 colorscheme catppuccin
 
@@ -85,7 +85,7 @@ colorscheme catppuccin
 let g:nord_uniform_status_lines = 1
 
 " start nerdtree
-autocmd vimenter * NERDTree
+" autocmd vimenter * NERDTree
 
 " use jinja filetype for .html files by default
 au BufNewFile,BufRead *.html set ft=jinja
@@ -299,3 +299,9 @@ let g:ale_linters = {
 \}
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_linters_explicit = 1
+
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
