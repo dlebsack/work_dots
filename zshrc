@@ -1,14 +1,14 @@
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-            eval "$("$BASE16_SHELL/profile_helper.sh")"
+# BASE16_SHELL="$HOME/.config/base16-shell/"
+# [ -n "$PS1" ] && \
+#     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+#             eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/david/.oh-my-zsh"
+export ZSH="/Users/lebsack/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -17,28 +17,30 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 ZSH_THEME="spaceship"
 SPACESHIP_BATTERY_SHOW=false
 SPACESHIP_KUBECTL_SHOW=true
+SPACESHIP_KUBECTL_ASYNC=true
+SPACESHIP_GOLANG_SHOW=false
+SPACESHIP_DOCKER_SHOW=false
+SPACESHIP_GCLOUD_SHOW=false
 SPACESHIP_KUBECONTEXT_COLOR_GROUPS=(
     red production
     yellow staging
 )
 COMPLETION_WAITING_DOTS="true"
 source $ZSH/oh-my-zsh.sh
-plugins=(
-  git
-  docker
-  kubectl
-)
 
 export GOPATH=$HOME
+export GOPRIVATE="bitbucket.org/dialsource,go.buf.build,buf.build/gen/go"
 export GODIR=$HOME/go
 export LANG=en_US.UTF-8
 export LC_MESSAGES="C"
-export EDITOR='vim'
-export PATH="$HOME/.node/bin:$PATH"  
+export EDITOR='nvim'
+export PATH="$HOME/.node/bin:$GOPATH/bin:$PATH"  
 export NODE_PATH="$HOME/.node/lib/node_modules:$NODE_PATH"  
 #ssh
 export VAULT_ADDR='http://127.0.0.1:8200'
 export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_PRIVATE_KEY=$(cat ~/.ssh/id_rsa)
+export BUF_NETRC=$(cat ~/.netrc)
 export DS_DEV_HOSTNAME=ws-david
 export DS_ENV=staging
 export DS_VWI_ENV=ian
@@ -137,7 +139,7 @@ alias dsc_call='/home/david/Scripts/add_dsc_call.sh'
 alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an> %Creset' --abbrev-commit"
 alias development="gcloud beta container clusters get-credentials development --region us-east4 --project dialsource-213300"
 alias staging="gcloud beta container clusters get-credentials staging --region us-east4 --project dialsource-213300"
-alias production='read "brave?Are you sure you want to connect to production? [Y/n]"; if [[ "$brave" =~ ^[Yy]$ ]]; then gcloud beta container clusters get-credentials production --region us-east4 --project dialsource-213300; fi'
+alias production='read "brave?Are you sure you want to connect to production? [y/N]"; if [[ "$brave" =~ ^[Yy]$ ]]; then gcloud beta container clusters get-credentials production --region us-east4 --project dialsource-213300; fi'
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /root/vault vault
