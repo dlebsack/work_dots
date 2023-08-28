@@ -12,10 +12,10 @@ require('nvim-treesitter.configs').setup {
 	incremental_selection = {
 		enable = true,
 		keymaps = {
-			init_selection = '<c-space>',
-			node_incremental = '<c-space>',
-			scope_incremental = '<c-s>',
-			node_decremental = '<M-space>',
+			init_selection = '<c-s>',
+			node_incremental = '<c-s>',
+			scope_incremental = '<c-space>',
+			node_decremental = '<c-d>',
 		},
 	},
 	textobjects = {
@@ -36,19 +36,19 @@ require('nvim-treesitter.configs').setup {
 			enable = true,
 			set_jumps = true, -- whether to set jumps in the jumplist
 			goto_next_start = {
-				[']m'] = '@function.outer',
+				[']f'] = '@function.outer',
 				[']]'] = '@class.outer',
 			},
 			goto_next_end = {
-				[']M'] = '@function.outer',
+				[']F'] = '@function.outer',
 				[']['] = '@class.outer',
 			},
 			goto_previous_start = {
-				['[m'] = '@function.outer',
+				['[f'] = '@function.outer',
 				['[['] = '@class.outer',
 			},
 			goto_previous_end = {
-				['[M'] = '@function.outer',
+				['[F'] = '@function.outer',
 				['[]'] = '@class.outer',
 			},
 		},
