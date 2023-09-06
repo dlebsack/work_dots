@@ -43,6 +43,10 @@ export GODIR=$HOME/go
 # buf settings for docker builds
 export BUF_NETRC=$(cat ~/.netrc)
 
+# weechat settings
+export WEECHAT_HOME=~/.weechat
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
 # #ssh
 alias ssh='ssh -A'
 # for docker builds
