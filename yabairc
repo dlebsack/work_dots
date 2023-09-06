@@ -1,0 +1,56 @@
+#! /usr/bin/env zsh
+
+# bsp | stack | float
+yabai -m config layout bsp
+
+# padding set to 12px
+yabai -m config top_padding                12
+yabai -m config bottom_padding             12
+yabai -m config left_padding               12
+yabai -m config right_padding              12
+yabai -m config window_gap                 12
+
+# center mouse on window with focus
+yabai -m config mouse_follows_focus on
+yabai -m config focus_follows_mouse on
+
+# modifier for clicking and dragging with mouse
+yabai -m config mouse_modifier alt
+# set modifier + left-click drag to move window
+yabai -m config mouse_action1 move
+# set modifier + right-click drag to resize window
+yabai -m config mouse_action2 resize
+
+
+# when window is dropped in center of another window, swap them (on edges it will split it)
+yabai -m mouse_drop_action swap
+
+yabai -m rule --add app="^System Settings$" manage=off
+
+yabai -m config window_border              on # enabling this option will also enable blur
+yabai -m config window_border_blur 		   off
+yabai -m config window_placement           second_child
+yabai -m config window_topmost             off
+yabai -m config window_shadow              float
+yabai -m config window_opacity             on
+yabai -m config window_opacity_duration    0.1
+yabai -m config active_window_opacity      1.0
+yabai -m config normal_window_opacity      1.0
+yabai -m config window_border_width        3
+yabai -m config window_border_hidpi        off
+yabai -m config window_border_radius	   3
+yabai -m config window_animation_duration  0.0
+yabai -m config active_window_border_color 0xffcdd6f4
+yabai -m config normal_window_border_color 0xff313244
+yabai -m config insert_feedback_color      0xfffab387
+yabai -m config split_ratio                0.50
+yabai -m config auto_balance               off
+				# external_bar               all:0:0
+
+# Exclude problematic apps from being managed:
+yabai -m rule --add app="^(Software Update|System Preferences|System Settings|zoom.us|App Store|Steam|Activity Monitor)$" manage=off
+yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
+yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
+yabai -m rule --add label="Select file to save to" app="^Inkscape$" title="Select file to save to" manage=off
+yabai -m rule --add app="^Slack*" title="^Huddle*" manage=off
+yabai -m rule --add app="^Studio*" title="Connection Manager" manage=off
