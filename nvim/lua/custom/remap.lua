@@ -17,4 +17,5 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnos
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
--- F5 to remove trailing whitespace
+-- cd to current files directory
+vim.keymap.set('n', '<leader>cd', ':cd %:p:h<CR>:pwd<CR>')
