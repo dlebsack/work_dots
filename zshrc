@@ -75,3 +75,5 @@ if [ -f '/home/david/Source/google-cloud-sdk/path.zsh.inc' ]; then . '/home/davi
 if [ -f '/home/david/Source/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/david/Source/google-cloud-sdk/completion.zsh.inc'; fi
 
 bindkey '^R' history-incremental-search-backward
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
