@@ -1,6 +1,9 @@
 autoload -Uz compinit
 compinit
 
+# share history bewtween sessions for instance history search
+setopt share_history
+
 # enabled substring history search
 autoload -U history-search-end
 zle -N history-beginning-search-backward-end history-search-end
