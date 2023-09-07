@@ -73,3 +73,5 @@ if [ -f '/home/david/Source/google-cloud-sdk/path.zsh.inc' ]; then . '/home/davi
 #
 # # The next line enables shell command completion for gcloud.
 if [ -f '/home/david/Source/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/david/Source/google-cloud-sdk/completion.zsh.inc'; fi
+
+bindkey '^R' history-incremental-search-backward
