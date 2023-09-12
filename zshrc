@@ -83,3 +83,4 @@ if [ -f '/home/david/Source/google-cloud-sdk/completion.zsh.inc' ]; then . '/hom
 bindkey '^R' history-incremental-search-backward
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
+export PATH=$PATH:/Users/lebsack/.spicetify
