@@ -50,6 +50,9 @@ export BUF_NETRC=$(cat ~/.netrc)
 export WEECHAT_HOME=~/.weechat
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
+# default tag version for docker builds
+export TAG_VERSION=latest
+
 # #ssh
 alias ssh='ssh -A'
 # for docker builds
