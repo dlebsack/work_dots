@@ -19,3 +19,6 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 -- cd to current files directory
 vim.keymap.set('n', '<leader>cd', ':cd %:p:h<CR>:pwd<CR>')
+
+-- open fugitive git
+vim.keymap.set('n', '<leader>G', vim.cmd.G)
