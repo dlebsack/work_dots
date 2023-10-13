@@ -1,5 +1,8 @@
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
+-- set filetype for apex
+vim.cmd [[autocmd BufRead *.cls,*.trigger,*.apex set filetype=apex]]
+
 -- remove trailing whitespace
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 	pattern = { "*" },
