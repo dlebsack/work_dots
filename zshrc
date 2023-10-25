@@ -22,6 +22,7 @@ SPACESHIP_GOLANG_SHOW=false
 SPACESHIP_DOCKER_SHOW=false
 SPACESHIP_GCLOUD_SHOW=false
 SPACESHIP_BATTERY_SHOW=false
+SPACESHIP_JAVA_SHOW=false
 SPACESHIP_DOCKER_COMPOSE_SHOW=false
 
 # kubectl prompt
@@ -89,3 +90,5 @@ export PATH=$PATH:/Users/lebsack/.spicetify
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+export DOCKER_DEFAULT_PLATFORM=linux/amd64
