@@ -55,6 +55,10 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 # default tag version for docker builds
 export TAG_VERSION=latest
 
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 # #ssh
 alias ssh='ssh -A'
 # for docker builds
@@ -92,3 +96,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 export DOCKER_DEFAULT_PLATFORM=linux/amd64
+# # useful only for Mac OS Silicon M1,
+# still working but useless for the other platforms
+# docker() {
+#  if [[ `uname -m` == "arm64" ]] && [[ "$1" == "run" || "$1" == "build" ]]; then
+#     /usr/local/bin/docker "$1" --platform linux/amd64 "${@:2}"
+#   else
+#      /usr/local/bin/docker "$@"
+#   fi
+# }
