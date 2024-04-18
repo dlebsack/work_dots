@@ -62,8 +62,8 @@ eval "$(pyenv init -)"
 # #ssh
 alias ssh='ssh -A'
 # for docker builds
-export SSH_KEY_PATH="~/.ssh/rsa_id"
-export SSH_PRIVATE_KEY=$(cat ~/.ssh/id_rsa)
+export SSH_KEY_PATH="~/.ssh/id_ecdsa.pub"
+export SSH_PRIVATE_KEY=$(cat ~/.ssh/id_ecdsa)
 # eval $(ssh-agent) > /dev/null
 # ssh-add ~/.ssh/id_rsa 2&> /dev/null
 
@@ -75,8 +75,8 @@ alias cw-iad-1='ssh root@cw-iad-1.dialsource.com'
 alias cw-dfw-1='ssh root@cw-dfw-1.dialsource.com'
 
 # gcloud alias
-alias development="gcloud beta container clusters get-credentials development --region us-east4 --project dialsource-213300"
-alias staging="gcloud beta container clusters get-credentials staging --region us-east4 --project dialsource-213300"
+alias development="gcloud container clusters get-credentials conquer-development --region us-east4 --project dialsource-213300"
+alias staging="gcloud container clusters get-credentials conquer-staging --region us-east4 --project dialsource-213300"
 alias production='read "brave?Are you sure you want to connect to production? [y/N]"; if [[ "$brave" =~ ^[Yy]$ ]]; then gcloud beta container clusters get-credentials production --region us-east4 --project dialsource-213300; fi'
 
 # autocomplete for gcloud
@@ -105,3 +105,5 @@ export DOCKER_DEFAULT_PLATFORM=linux/amd64
 #      /usr/local/bin/docker "$@"
 #   fi
 # }
+
+export PATH=$PATH:/Users/david/.spicetify
