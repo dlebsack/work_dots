@@ -1,3 +1,6 @@
 Host *
   AddKeysToAgent yes
   IdentityFile ~/.ssh/id_rsa
+  PasswordAuthentication no
+  PubkeyAcceptedKeyTypes +ssh-rsa
+  HostkeyAlgorithms +ssh-rsa
